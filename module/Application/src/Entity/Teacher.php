@@ -54,10 +54,10 @@
 		/**
 		* @var \Doctrine\Common\Collections\Collection|Subject[]
 		*
-		* @ORM\@ManyToMany(targetEntity="Subject")
-		* @JoinTable(name="teachers_subjects",
-		*      joinColumns={@JoinColumn(name="teacher_id", referencedColumnName="id")},
-		*      inverseJoinColumns={@JoinColumn(name="subject_id", referencedColumnName="id", unique=true)}
+		* @ORM\ManyToMany(targetEntity="Subject")
+		* @ORM\JoinTable(name="teachers_subjects",
+		*      joinColumns={@ORM\JoinColumn(name="teacher_id", referencedColumnName="id")},
+		*      inverseJoinColumns={@ORM\JoinColumn(name="subject_id", referencedColumnName="id", unique=true)})
 		*/
 		protected $subjects;    
 		

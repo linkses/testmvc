@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zfcampus/zf-console": "^1.3"
+    }
+}

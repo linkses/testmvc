@@ -9,6 +9,7 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Console\Request as ConsoleRequest;
 
 class IndexController extends AbstractActionController
 {
@@ -16,4 +17,11 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+	
+    public function helloworldAction()
+    {
+		$request = $this->getRequest();
+        return "Hello ".$request->getParam('name');
+    }
+	
 }

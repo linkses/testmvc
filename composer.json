@@ -16,7 +16,9 @@
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
-        "doctrine/doctrine-orm-module": "^1.0.9"
+        "doctrine/doctrine-orm-module": "^1.0.9",
+        "zfcampus/zf-console": "^1.3",
+        "zendframework/zend-mvc-console": "^1.1"
     },
     "autoload": {
         "psr-4": {

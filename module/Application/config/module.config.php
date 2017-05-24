@@ -14,10 +14,10 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
 	'doctrine' => array(
         'driver' => array(
-            'Album_driver' => array(
+            'Application_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/Application/Entity')
+                'paths' => array(__DIR__ . '/../src/Entity')
             ),
             'orm_default' => array(
                 'drivers' => array(
@@ -26,9 +26,24 @@ return [
             ),
         ),
     ),  
+	'console' => [
+		'router' => [
+			'routes' => [
+				'verbose' => [
+					'options' => [
+						'route'    => 'hello-world [--name=]',
+						'defaults' => [
+							'controller' => Controller\IndexController::class,
+							'action'     => 'helloworld',
+						],
+					],
+				],
+			]
+		]
+	],
     'router' => [
         'routes' => [
-            'home' => [
+			'home' => [
                 'type' => Literal::class,
                 'options' => [
                     'route'    => '/',
