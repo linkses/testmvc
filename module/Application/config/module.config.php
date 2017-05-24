@@ -12,6 +12,20 @@ use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+	'doctrine' => array(
+        'driver' => array(
+            'Album_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/Application/Entity')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                     'Application\Entity' =>  'Application_driver'
+                ),
+            ),
+        ),
+    ),  
     'router' => [
         'routes' => [
             'home' => [
